@@ -1,0 +1,12 @@
+<phpunit
+  bootstrap="vendor/autoload.php"
+  colors="true"
+>
+
+  <testsuites>
+    <testsuite>
+      <file>tests/ConnexionTest.php</file>
+      <file>tests/MovieTest.php</file>
+    </testsuite>
+  </testsuites>
+</phpunit>
