@@ -6,6 +6,7 @@ namespace src;
  * @class Realisateur
  * @version 1.0
  * @author Boyer Julien
+ * @extends Personnel
  */
 class Realisateur extends Personnel
 {
