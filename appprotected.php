@@ -19,9 +19,6 @@ $movie->setBudget(240000000);
 $movie->setDateRelease('2016-05-18');
 $movie->setDistributeur('HBO');
 
-//echo $movie->deleteMovie(89);
-//$resultat =  $movie->nombreFilm(5, 10000000);
-//echo $resultat['nbFilm'];
 
 var_dump($movie);
 echo $movie->testDateReleaseFromMovie($movie);
@@ -54,7 +51,6 @@ var_dump($yersteday);
 $nextYear = new DateTime('+1 year');
 var_dump($nextYear);
 
-
 $nextYear = new DateTime('2012-04-08');
 
 $lastDayOfThisMounth = new DateTime('last day of this month');
@@ -71,7 +67,9 @@ var_dump($dateModifyTwo);
 
 
 
-
+/**
+ * Coucou 3WA L9 :) Les meilleurs
+ */
 
 // echo $movie->infoAll();
 // $movie->insererMovieInDb();
