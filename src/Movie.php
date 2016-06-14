@@ -660,14 +660,4 @@ public function testDateReleaseFromMovie (Movie $movie){
    }
 
 
-
-
-/**
- * Créer une méthode statique dans Acteur qui retourne
- * la langue parlé et le pays en fonction de la constante LANGUE
- * et de la constante PAYS
- */
-
-
-
 }
