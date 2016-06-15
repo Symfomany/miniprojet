@@ -3,7 +3,7 @@ namespace src;
 
 
 /**
- * 
+ *
  */
 class ActeurSerie extends Acteur{
 

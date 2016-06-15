@@ -68,6 +68,13 @@ class Movie{
    */
   const VERSION = "1.0";
 
+  /**
+   * [$prix description]
+   * @var integer
+   */
+  protected $prix = 0;
+
+
 
   /**
    * [__construct description]
@@ -656,6 +663,25 @@ public function testDateReleaseFromMovie (Movie $movie){
               </div>";
 
    }
+
+   /**
+    * Modifier Prix selon une Réduction ou Promotion
+    * @param  integer $promotion [description]
+    * @param  integer $reduction [description]
+    * @return [type]             [description]
+    */
+   public function modifPrix($promotion = 0, $reduction = 0){
+
+     if($promotion != 0){
+
+       $this->prix = $this->prix - $promotion;
+     }
+
+     if($reduction!=0) {
+
+       $this->prix = $this->prix - (($this->prix * $reduction) / 100);
+     }
+ }
 
 
 }
