@@ -1,5 +1,6 @@
 <?php
 include  "src/Movie.php";
+include  "src/Dvd.php";
 include  "src/Connexion.php";
 include  "lib/Connexion.php";
 include  "src/Acteur.php";

@@ -1,6 +1,10 @@
 <?php
 namespace src;
 
+
+/**
+ * 
+ */
 class ActeurSerie extends Acteur{
 
   protected $nomDeSerie;
