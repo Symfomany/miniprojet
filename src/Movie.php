@@ -69,8 +69,6 @@ class Movie{
   const VERSION = "1.0";
 
 
-
-
   /**
    * [__construct description]
    * @param [type] $annee [description]
