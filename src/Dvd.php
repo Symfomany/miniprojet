@@ -6,7 +6,7 @@ namespace src;
  * @class Dvd
  * @extends Movie
  */
-class Dvd extends Movie
+class Dvd extends Movie implements ContenuInterface
 {
 
   protected $taxe = 19.6;
@@ -223,6 +223,19 @@ class Dvd extends Movie
 
         return $this;
     }
+
+
+    /**
+     * Permet à partir d'un DVD acheté, un dvd ou blue ray offert
+     * @return [type] [description]
+     */
+    public function promotionOffert(Movie $movie){
+
+      return "<p>Le film {$this->titre} acehté en dvd
+                  vous donne pour offert le film {$movie->titre}</p>";
+
+    }
+
 
 }
 

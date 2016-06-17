@@ -1,5 +1,11 @@
 <?php
+/**
+ *
+ */
+include "vendor/autoload.php";
 
+
+include  "src/ContenuInterface.php";
 include  "src/Movie.php";
 include  "src/BlueRay.php";
 include  "src/Dvd.php";
@@ -10,6 +16,7 @@ use src\BlueRay;
 use src\Connexion;
 use src\Dvd;
 use src\DvdRom;
+use src\Movie;
 
 $connexion = new Connexion(3306,"localhost","cineacademy","root", "djscrave");
 
@@ -23,6 +30,7 @@ $dvdTwo = new Dvd($connexion);
 $dvdTwo->setTitre('La Baleine Verte');
 $dvdTwo->setSynopsis("Description  de la jolie baleine verte");
 $dvdTwo->setBudget(200000000);
+$dvdTwo->setDateRelease('2014-03-02');
 
 $dvdThree = new Dvd($connexion);
 $dvdThree->setTitre('La Baleine Jaune');
@@ -70,10 +78,53 @@ $blueRay->setFabricant("Sony");
 $blueRay->setDiametre("10");
 $blueRay->setPoid(15);
 $blueRay->modifPrix(100, 25);
-// $blueRay->insererMovieInDb();
-//
-var_dump($blueRay);
-var_dump($dvdRom);
+$blueRay->setDateRelease('2016-05-04');
+// var_dump($blueRay);
+// var_dump($dvdRom);
+
+
+$resultat = Movie::dateReleaseYear($blueRay);
+$resultat2 = Movie::dateReleaseYear($dvdTwo);
+// var_dump($resultat, $resultat2);
+
+var_dump($dvdTwo, $blueRay);
+echo Movie::countMonthBetweenMovies($blueRay, $dvdTwo);
+
+
+echo $dvdRom->promotionOffert($blueRay);
+echo $dvdTwo->promotionOffert($dvdRom);
+echo $dvdRom->promotionOffert($dvdFour);
+
+$blueRay->setPrix([
+  ["165151", "65464654"],
+  [$dvdTwo,$dvdThree, $dvdFour],
+  [true, false],
+
+]);
+
+// dump($blueRay);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -55,8 +55,9 @@ $movie->setTitre('Moby Dick');
 echo $acteurDeFilm->commenterMovie($movie);
 echo $acteurDeSerie->commenterMovie($movie);
 
-
 var_dump($actor, $realisateur, $acteurDeSerie, $acteurDeFilm);
+
+
 
 
 

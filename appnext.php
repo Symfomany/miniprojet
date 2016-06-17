@@ -118,4 +118,6 @@ $dateOne = new DateTime('2012-01-01');
 $dateTwo = new DateTime('2016-01-01');
 echo Session::returnSessionSelect($dateOne, $dateTwo, $connexion);
 
+
+
 ?>

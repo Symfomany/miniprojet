@@ -166,7 +166,7 @@ class Personnel{
      * @return [type]        [description]
      */
     public function commenterMovie(Movie $movie){
-      
+
       return "<p>
         {$this->nom}
         {$this->prenom}

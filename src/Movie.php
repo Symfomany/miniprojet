@@ -2,11 +2,12 @@
 
 namespace src;
 
+use \DateTime;
 
 /**
  * Class Movie represent table movies
  */
-class Movie{
+class Movie  {
 
     /**
      * Id
@@ -84,7 +85,6 @@ class Movie{
   Connexion $connexion = null, $id = null){
 
     $this->id = $id;
-
     // J'initialise ma connexion à la base de données
     // par l'intermédiaire de mon objet $connexion
     if($connexion){
@@ -325,6 +325,13 @@ class Movie{
                 </blockquote>
               </div>
             </div>";
+  }
+
+  public static function gestionVisibilite(VisibleInterface $obj){
+
+    // gerer la visibilité
+    // objet, quelque soit la provenance de ma classe
+    // a un comportement suffisant pour etre implémenter dans cette methode
   }
 
   /**
@@ -680,8 +687,42 @@ public function testDateReleaseFromMovie (Movie $movie){
      if($reduction!=0) {
 
        $this->prix = $this->prix - (($this->prix * $reduction) / 100);
-     }
- }
+       }
+   }
+
+   /**
+    * Permet de dire si obket de la classe Movies est de cette année
+    * @param  Movies $object [description]
+    * @return [type]         [description]
+    */
+   public static function dateReleaseYear(Movie $object){
+
+     $dateObject = new \DateTime($object->dateRelease);
+     $dateNow = new \DateTime("now");
+
+     return $dateObject->format("Y") == $dateNow->format("Y");
+    }
+
+  /**
+   * Compte le nombre de mois
+   * @param  Movies $movieOne [description]
+   * @param  Movies $movieTwo [description]
+   * @return [type]           [description]
+   */
+  public static function countMonthBetweenMovies(Movie $movieOne,
+  Movie $movieTwo ){
+
+    $dateMovieOne = DateTime::createFromFormat('Y-m-d', $movieOne->dateRelease);
+    $dateMovieTwo = DateTime::createFromFormat('Y-m-d', $movieTwo->dateRelease);
+
+    $interval = date_diff($dateMovieOne, $dateMovieTwo);
+    $diffMois = $interval->format('%m') + $interval->format('%Y') * 12;
+
+    return $diffMois;
+  }
+
+
+
 
 
 }

@@ -170,9 +170,11 @@ class Session
       $newTabObjs = [];
 
       foreach ($tabFilm as $value) {
-        $date = new \DateTime($value->getDateSession());
-        if ($date->format('Y') == self::ANNEE) {
-          $newTabObjs[] = $value;
+        if($value insteadof Movie){
+          $date = new \DateTime($value->getDateSession());
+          if ($date->format('Y') == self::ANNEE) {
+            $newTabObjs[] = $value;
+          }
         }
       }
 
